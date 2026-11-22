@@ -1,0 +1,10 @@
+build/
+build-*/
+*.o
+*.a
+*.ppm
+.DS_Store
+.vscode/
+sdkconfig.old
+dependencies.lock
+managed_components/
