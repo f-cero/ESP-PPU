@@ -11,3 +11,6 @@ This project draws on publicly documented console techniques
 (SNES Mode 7 per-scanline transform, HDMA register streaming,
 GBA affine backgrounds and OAM rotation parameters).  No original
 console code or ROM content is included.
+
+MVID v1 tile-video codec, reference clips and format spec contributed from
+the Mosaic project (github.com/f-cero/Mosaic @ 6e09777), Apache-2.0.

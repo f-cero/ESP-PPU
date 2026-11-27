@@ -27,6 +27,7 @@ void register_tests_sprite(void);
 void register_tests_affine(void);
 void register_tests_render(void);
 void register_tests_link(void);
+void register_tests_mvid(void);
 
 int main(void)
 {
@@ -36,6 +37,7 @@ int main(void)
     register_tests_affine();
     register_tests_render();
     register_tests_link();
+    register_tests_mvid();
 
     for (int i = 0; i < n_tests; i++) {
         int before = test_failures;

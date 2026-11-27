@@ -97,3 +97,16 @@ packets (`MEM_WRITE`, `REG_WRITE`, `FRAME`).
 
 Apache-2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
+
+## MVID tile video
+
+Full-screen animation without a frame buffer: a clip is a tile atlas, a
+tilemap of SNES-packed entries and a palette — exactly what the PPU already
+eats. Pans cost 16 bytes per frame, fades cost 0. The decoder
+(`src/mvid_decode.c`, ~250 lines) is allocation-free C99; callers supply the
+sheet/map buffers, or bind them straight to a BG layer for the zero-blit
+path. See `docs/mvid.md` (normative spec) and `docs/mvid-handoff.md`
+(integration guide, resource budget, authoring envelope). Reference clips
+live in `assets/clips/`; the host test suite verifies both decode to their
+published fingerprints. `tools/mvid_encode.c` is the host-only encoder for
+authoring clips; `examples/host/mvid_demo.c` plays a clip to PPM.
